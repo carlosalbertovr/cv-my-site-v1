@@ -1,0 +1,135 @@
+---
+import projectsJson from "@data/projects.json";
+import technologiesJson from "@data/technologies.json";
+import Button from "@components/common/Button.astro";
+import Layout from "../../layouts/Layout.astro";
+import { Reveal } from "@components/common/Reveal";
+import BlurText from "@components/snippets/BlurText";
+import GlassContainer from "../../components/common/GlassContainer.astro";
+
+export function getStaticPaths() {
+  return projectsJson.map((project) => ({
+    params: { projectId: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+
+const {
+  title,
+  description,
+  image,
+  technologies,
+  url,
+  github_repository_url,
+  other_links,
+} = project;
+---
+
+<Layout>
+  <div class="flex flex-col gap-8 my-24 min-h-screen text-white">
+    <img src={image} alt={title} class="w-full rounded-lg" />
+    <div class="flex flex-col sm:flex-row justify-between w-full max-w-4xl">
+      <BlurText
+        client:load
+        text={title}
+        delay={200}
+        animateBy="words"
+        direction="top"
+        onAnimationComplete={() => console.log("foo")}
+        className="text-4xl font-semibold"
+      />
+      <div class="flex flex-col sm:flex-row gap-4 items-center">
+        {
+          github_repository_url && (
+            <Reveal className="w-full" index={1} client:load>
+              <a
+                href={github_repository_url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button leftIcon="GithubLogo">
+                  <p class="text-sm whitespace-nowrap">Open in GitHub</p>
+                </Button>
+              </a>
+            </Reveal>
+          )
+        }
+        {
+          url && (
+            <Reveal className="w-full" index={2} client:load>
+              <a href={url} target="_blank" rel="noopener noreferrer">
+                <Button leftIcon="ArrowSquareOut">
+                  <p class="text-sm whitespace-nowrap">Visit Project</p>
+                </Button>
+              </a>
+            </Reveal>
+          )
+        }
+      </div>
+    </div>
+    <BlurText
+      client:load
+      text={description}
+      delay={10}
+      animateBy="words"
+      direction="top"
+      onAnimationComplete={() => console.log("foo")}
+      className="text-base text-gray-400"
+    />
+    <div class="flex flex-col gap-4">
+      <BlurText
+        client:load
+        text="Technologies Used"
+        delay={200}
+        animateBy="words"
+        direction="top"
+        onAnimationComplete={() => console.log("foo")}
+        className="text-xl font-semibold"
+      />
+      <div class="flex flex-wrap gap-2 mb-4">
+        {
+          technologies.map((projectTechnology, index) => {
+            const technology = technologiesJson.find(
+              (technology) => technology.id === projectTechnology
+            );
+
+            const technologyName = technology
+              ? technology.title
+              : projectTechnology;
+            return (
+              <Reveal index={index + 1} client:load>
+                <GlassContainer className="px-4 py-2 text-sm">
+                  {technologyName}
+                </GlassContainer>
+              </Reveal>
+            );
+          })
+        }
+      </div>
+    </div>
+    <div class="flex flex-col gap-4">
+      <BlurText
+        client:load
+        text="Other links"
+        delay={200}
+        animateBy="words"
+        direction="top"
+        onAnimationComplete={() => console.log("foo")}
+        className="text-xl font-semibold"
+      />
+      <div class="flex flex-wrap gap-2 mb-4">
+        {
+          other_links.map((link, index) => (
+            <Reveal index={index + 1} client:load>
+              <a href={link.url} target="_blank" rel="noopener noreferrer">
+                <Button leftIcon="ArrowSquareOut"><p class="text-sm whitespace-nowrap">{link.name}</p></Button>
+              </a>
+            </Reveal>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Layout>

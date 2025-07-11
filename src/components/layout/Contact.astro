@@ -1,0 +1,67 @@
+---
+import IconBadge from "@components/common/IconBadge.astro";
+import IconButton from "@components/common/IconButton.astro";
+import { type IconName } from "@components/common/Icon";
+import contactJson from "@data/contact.json";
+import socialJson from "@data/social.json";
+import { Reveal } from "@components/common/Reveal";
+import BlurText from "@components/snippets/BlurText";
+---
+
+<footer class="fixed bottom-4 left-4 z-50">
+  <div class="flex flex-col gap-4">
+    {
+      contactJson.map((key) => (
+        <div class="flex items-center gap-2">
+          <Reveal index={0} client:load>
+            <IconBadge icon={key.icon as IconName} />
+          </Reveal>
+          <div class="flex flex-col gap-0">
+            <>
+              <BlurText
+                client:load
+                text={key.label}
+                delay={25}
+                animateBy="words"
+                direction="top"
+                onAnimationComplete={() => console.log("foo")}
+                className="text-xs"
+              />
+              <BlurText
+                client:load
+                text={key.text}
+                delay={25}
+                animateBy="words"
+                direction="top"
+                onAnimationComplete={() => console.log("foo")}
+                className="text-xs text-gray-400"
+              />
+            </>
+          </div>
+        </div>
+      ))
+    }
+    <div class="flex flex-col gap-2">
+      <BlurText
+        client:load
+        text="Connect with me"
+        delay={25}
+        animateBy="words"
+        direction="top"
+        onAnimationComplete={() => console.log("foo")}
+        className="text-sm"
+      />
+      <div class="flex flex-row gap-2">
+        {
+          socialJson.map((key, index) => (
+            <Reveal index={index} client:load>
+              <a href={key.url} target="_blank" rel="noopener noreferrer">
+                <IconButton icon={key.icon as IconName} />
+              </a>
+            </Reveal>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,42 @@
+---
+import GlassContainer from "@components/common/GlassContainer.astro";
+import Button from "@components/common/Button.astro";
+
+const currentLocation = Astro.url.pathname;
+---
+
+<div>
+  <div class="fixed top-4 left-4 z-50">
+    {
+      currentLocation !== "/" && (
+        <a href="/">
+          <Button leftIcon="ArrowLeft">
+            <p class="text-sm">Back</p>
+          </Button>
+        </a>
+      )
+    }
+  </div>
+  <nav class="fixed top-4 left-1/2 -translate-x-1/2 z-50">
+    <GlassContainer>
+      <div class="flex items-center justify-between gap-0">
+        {
+          [
+            { href: "/#about", label: "About" },
+            { href: "/#skills", label: "Skills" },
+            { href: "/#projects", label: "Projects" },
+          ].map(({ href, label }) => (
+            <a href={href}>
+              <button class="px-[1rem] py-[0.35rem] hover:bg-white/5 rounded-full text-white text-sm cursor-pointer">
+                {label}
+              </button>
+            </a>
+          ))
+        }
+      </div>
+    </GlassContainer>
+  </nav>
+  <div class="fixed top-4 right-4 z-50">
+    <Button rightIcon="DownloadSimple"> <p class="text-sm">Resume</p> </Button>
+  </div>
+</div>

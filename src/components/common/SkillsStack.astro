@@ -1,0 +1,37 @@
+---
+import GlassContainer from "@components/common/GlassContainer.astro";
+import skillsJson from "@data/skills.json";
+import technologiesJson from "@data/technologies.json";
+import { Reveal } from "@components/common/Reveal";
+---
+
+<div class="flex flex-col gap-16">
+  {
+    skillsJson.map(({ title, technologies }) => (
+      <Reveal className="w-full" client:load>
+        <GlassContainer className="flex flex-col xl:flex-row gap-6 rounded-2xl p-6 w-full">
+          <h3 class="text-2xl font-semibold min-w-[10rem]">{title}</h3>
+            <div class="flex flex-col sm:flex-row sm:flex-wrap gap-4">
+            {technologies.map((skillTech) => {
+              const matchedTech = technologiesJson.find(
+                (tech) => tech.id === skillTech
+              );
+              return matchedTech ? (
+                <div class="flex items-center gap-2">
+                  <img
+                    src={matchedTech.image}
+                    alt={matchedTech.id}
+                    width="38"
+                    height="38"
+                    class="rounded-lg object-cover"
+                  />
+                  <p class="text-base">{matchedTech.title}</p>
+                </div>
+              ) : null;
+            })}
+          </div>
+        </GlassContainer>
+      </Reveal>
+    ))
+  }
+</div>

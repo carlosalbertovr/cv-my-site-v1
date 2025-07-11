@@ -1,0 +1,17 @@
+[
+  {
+    "id": "bim-pilot",
+    "title": "BIM Pilot",
+    "image": "/project-covers/01-bim-pilot.png",
+    "description": "BIM Pilot is a web-based application designed for the interactive visualization of BIM models in IFC format.\nIt allows users to explore 3D models directly from the browser and access detailed information about every element within the model's structure—no desktop software required.\n\nUnlike traditional 3D viewers, BIM Pilot is not intended to replace existing desktop tools, but rather to serve as a more flexible and scalable technological foundation.\nIt acts as a starting point for the development of digital twins, enabling the integration of static data from IFC models with real-time information from external APIs or databases.\n\nThis project is built using That Open Company, a visualization library based on Three.js, which leverages WebIFC for reading and processing IFC model data directly in the browser.\n\nWith its web-first approach and open architecture, BIM Pilot offers an innovative solution for moving toward connected, intelligent, and easily accessible digital environments.",
+    "url": "https://www.google.com",
+    "github_repository_url": "https://github.com/carlosalbertovr/bim-pilot",
+    "technologies": ["nextjs", "tailwind", "zustand"],
+    "other_links": [
+      {
+        "name": "That Open Company",
+        "url": "https://thatopen.com/"
+      }
+    ]
+  }
+]

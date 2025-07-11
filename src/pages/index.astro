@@ -1,11 +1,134 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import { Reveal } from "@components/common/Reveal";
+import ExperienceBox from "@components/common/ExperienceBox.astro";
+import ProjectCard from "@components/common/ProjectCard.astro";
+import SkillsStack from "@components/common/SkillsStack.astro";
+import BlurText from "@components/snippets/BlurText";
+import IconBadge from "@components/common/IconBadge.astro";
+import avatar from "@assets/avatar.png";
+import projectsJson from "@data/projects.json";
 ---
 
 <Layout>
-	<Welcome />
+    {/* Section 1: Intro */}
+    <section id="intro" class="w-full h-screen">
+      <div class="flex items-center h-full text-white">
+        <div
+          class="flex flex-col sm:w-full lg:w-[60%] gap-8 sm:gap-8 items-center sm:items-start"
+        >
+          <Reveal index={1} client:load>
+            <img
+              src={avatar.src}
+              alt="Avatar"
+              class="rounded-full w-[120px] h-[120px] sm:w-[72px] sm:h-[72px] mb-4 mt-[3.5rem] sm:mt-0 object-cover"
+            />
+          </Reveal>
+          <Reveal index={2} removeAnimation client:load>
+            <BlurText
+              client:load
+              text="Full-Stack Software Developer, Designer and BIM Engineer"
+              delay={200}
+              animateBy="words"
+              direction="top"
+              onAnimationComplete={() => console.log("foo")}
+              className="text-2xl sm:text-4xl font-bold text-center sm:text-left"
+            />
+          </Reveal>
+          <Reveal index={3} removeAnimation client:load>
+            <BlurText
+              client:load
+              text={`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`}
+              delay={25}
+              animateBy="words"
+              direction="top"
+              onAnimationComplete={() => console.log("foo")}
+              className="text-base text-gray-400 text-center sm:text-left"
+            />
+          </Reveal>
+        </div>
+      </div>
+    </section>
+    {/* Section 2: About */}
+    <section id="about" class="w-full">
+      <div class="flex items-center h-full text-white">
+        <div class="flex flex-col gap-8">
+          <Reveal index={1} client:load>
+            <div class="flex items-center gap-2">
+              <IconBadge icon="UserIcon" />
+              <h2 class="text-base">About me</h2>
+            </div>
+          </Reveal>
+          <Reveal index={2} client:load>
+            <BlurText
+              client:load
+              text={`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`}
+              delay={50}
+              animateBy="words"
+              direction="top"
+              onAnimationComplete={() => console.log("foo")}
+              className="text-base text-gray-400 text-center sm:text-left"
+            />
+          </Reveal>
+
+          <div class="flex flex-col xl:flex-row gap-8 w-full">
+            <Reveal index={3} className="w-full" client:load>
+              <ExperienceBox type="education" />
+            </Reveal>
+            <Reveal index={4} className="w-full" client:load>
+              <ExperienceBox type="experience" />
+            </Reveal>
+          </div>
+        </div>
+      </div>
+    </section>
+    {/* Section 3: Skills */}
+    <section id="skills" class="w-full">
+      <div class="flex items-center h-full text-white">
+        <div class="flex flex-col w-full gap-8">
+          <Reveal index={1} client:load>
+            {" "}
+            <div class="flex items-center gap-2">
+              <IconBadge icon="BracketsCurlyIcon" />
+              <h2 class="text-base">Skills</h2>
+            </div>
+          </Reveal>
+          <SkillsStack client:load />
+        </div>
+      </div>
+    </section>
+    {/* Section 4: Projects */}
+    <section id="projects" class="w-full">
+      <div class="flex items-center h-full text-white mb-[20rem]">
+        <div class="flex flex-col">
+          <Reveal index={1} client:load>
+            {" "}
+            <div class="flex items-center gap-2 mb-4">
+              <IconBadge icon="CirclesFourIcon" />
+              <h2 class="text-base">Projects</h2>
+            </div>
+          </Reveal>
+          <div class="flex flex-col gap-8">
+            <Reveal index={2} removeAnimation client:load>
+              <BlurText
+                client:load
+                text={`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`}
+                delay={25}
+                animateBy="words"
+                direction="top"
+                onAnimationComplete={() => console.log("foo")}
+                className="text-base text-gray-400 text-center sm:text-left"
+              />
+            </Reveal>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              {
+                projectsJson.map((project, index) => (
+                  <ProjectCard index={index + 1} project={project} />
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 </Layout>

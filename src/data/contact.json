@@ -1,0 +1,13 @@
+[
+  {
+    "icon": "Envelope",
+    "label": "Email",
+    "text": "cavelazquezr95@gmail.com"
+  },
+  {
+    "icon": "Phone",
+    "label": "Phone",
+    "text": "+34 611 124 860"
+  },
+  { "icon": "MapPin", "label": "Location", "text": "Madrid, Spain" }
+]

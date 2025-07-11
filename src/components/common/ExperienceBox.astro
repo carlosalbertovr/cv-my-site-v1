@@ -1,0 +1,56 @@
+---
+import GlassContainer from "@components/common/GlassContainer.astro";
+import { Reveal } from "@components/common/Reveal";
+import IconBadge from "@components/common/IconBadge.astro";
+
+interface Props {
+  type: "experience" | "education";
+}
+
+const { type } = Astro.props;
+
+import experienceJson from "@data/experience.json";
+import educationJson from "@data/education.json";
+
+const records = type === "experience" ? experienceJson : educationJson;
+---
+
+<div class="flex flex-col gap-8 w-full">
+  <Reveal index={1} client:load>
+    <div class="flex items-center gap-2">
+      <IconBadge
+        icon={type === "experience" ? "BriefcaseMetal" : "Certificate"}
+      />
+      <h2 class="text-base">
+        {type === "experience" ? "Experience" : "Education"}
+      </h2>
+    </div>
+  </Reveal>
+  <GlassContainer className="flex-1 rounded-2xl">
+    <div class="flex flex-col gap-4 p-2">
+      {
+        records.map((record) => (
+          <div class="flex items-center gap-3 h-[40px]">
+            <img
+              width="32"
+              height="32"
+              src={record.image}
+              alt={record.title}
+              class="rounded-full object-cover"
+              loading="lazy"
+            />
+            <div class="flex flex-col w-full">
+              <p class="text-xs sm:text-sm font-semibold">{record.location}</p>
+              <h3 class="text-xs sm:text-sm text-gray-400">{record.title}</h3>
+            </div>
+            <div class="flex h-full items-end justify-end min-w-[6rem]">
+              <p class="text-xs sm:text-sm self-end text-gray-400">
+                {record.startDate}-{record.endDate}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </GlassContainer>
+</div>

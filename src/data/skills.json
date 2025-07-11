@@ -1,0 +1,33 @@
+[
+  {
+    "title": "Frontend",
+    "technologies": [
+      "javascript",
+      "typescript",
+      "react",
+      "astro",
+      "nextjs",
+      "redux",
+      "tailwind",
+      "zustand",
+      "chakra",
+      "tanstack"
+    ]
+  },
+  {
+    "title": "Backend",
+    "technologies": ["node", "express", "prisma", "knex"]
+  },
+  {
+    "title": "Databases",
+    "technologies": ["postgresql", "mysql"]
+  },
+  {
+    "title": "Tools & Cloud",
+    "technologies": ["git", "aws"]
+  },
+  {
+    "title": "Design",
+    "technologies": ["figma", "framer", "illustrator", "photoshop", "premier"]
+  }
+]

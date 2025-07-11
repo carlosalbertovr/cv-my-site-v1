@@ -1,0 +1,26 @@
+---
+import { cn } from "../../utils/twMerge";
+
+interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<div class={cn(["glass rounded-full p-[0.5rem]", className])}>
+  <slot />
+</div>
+
+<style>
+  .glass {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    backdrop-filter: blur(12px);
+    box-shadow:
+      inset 2px 2px 0.5px -2px rgba(173, 173, 173, 0.5),
+      inset -2px -2px 0.5px -2px rgba(173, 173, 173, 0.5),
+      inset 0px 0px 0px 1px rgba(255, 255, 255, 0.1),
+      0px 2px 8px 2px rgba(0, 0, 0, 0.1);
+  }
+</style>

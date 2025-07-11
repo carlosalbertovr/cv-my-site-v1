@@ -1,0 +1,16 @@
+---
+import GlassContainer from "@components/common/GlassContainer.astro";
+import { Icon, type IconName } from "@components/common/Icon";
+
+interface Props {
+  icon: IconName;
+}
+
+const { icon } = Astro.props;
+---
+
+<GlassContainer>
+  <div class="flex items-center gap-2 w-[20px] h-[20px] justify-center">
+    <Icon icon={icon} />
+  </div>
+</GlassContainer>
