@@ -2,11 +2,22 @@ import { pdf } from "@react-pdf/renderer";
 import { Resume } from "./Resume";
 import { Icon } from "@components/common/Icon";
 
+
 export default function ResumeDownloadButton() {
   const handleDownload = async () => {
     const blob = await pdf(<Resume />).toBlob();
     const url = URL.createObjectURL(blob);
-    window.open(url, "_blank");
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const filename = `${year}${month} - ENG CV Carlos Velazquez.pdf`;
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
   };
 
   return (
