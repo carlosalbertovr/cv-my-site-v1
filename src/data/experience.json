@@ -3,28 +3,50 @@
     "title": "Full-Stack Software Developer",
     "location": "Arup",
     "image": "companies/arup_logo.jpeg",
-    "startDate": "2023",
-    "endDate": "Present"
+    "startDate": "2023-04-01",
+    "endDate": "Present",
+    "responsibilities": [
+      "Developed and maintained full-stack web applications using Node.js and React.",
+      "Built RESTful APIs and database queries for efficient back-end logic.",
+      "Designed and implemented responsive, user-friendly interfaces with React.",
+      "Collaborated with cross-functional teams to deliver scalable and maintainable software solutions.",
+      "Participated in code reviews and agile development practices to improve code quality and team productivity."
+    ]
   },
   {
     "title": "BIM Technician",
     "location": "Arup",
     "image": "companies/arup_logo.jpeg",
-    "startDate": "2021",
-    "endDate": "2023"
+    "startDate": "2021-04-01",
+    "endDate": "2023-04-01",
+    "responsibilities": [
+      "Assisted in managing and coordinating building information models (BIM) to support project design and construction.",
+      "Developed automation tools using Revit API with C# to streamline repetitive tasks, reducing errors and saving time.",
+      "Collaborated with engineers and architects to improve workflow efficiency through custom software solutions."
+    ]
   },
   {
     "title": "BIM Technician",
     "location": "Valladares Ingeniería",
     "image": "companies/valladares_ingenieria_logo.jpeg",
-    "startDate": "2020",
-    "endDate": "2021"
+    "startDate": "2020-06-01",
+    "endDate": "2021-04-01",
+    "responsibilities": [
+      "Assisted in managing and coordinating building information models (BIM) to support project design and construction.",
+      "Developed automation tools using Revit API with C# to streamline repetitive tasks, reducing errors and saving time.",
+      "Collaborated with engineers and architects to improve workflow efficiency through custom software solutions."
+    ]
   },
   {
     "title": "BIM Technician",
     "location": "Arup",
     "image": "companies/arup_logo.jpeg",
-    "startDate": "2019",
-    "endDate": "2020"
+    "startDate": "2019-07-01",
+    "endDate": "2020-06-01",
+    "responsibilities": [
+      "Assisted in managing and coordinating building information models (BIM) to support project design and construction.",
+      "Developed automation tools using Revit API with C# to streamline repetitive tasks, reducing errors and saving time.",
+      "Collaborated with engineers and architects to improve workflow efficiency through custom software solutions."
+    ]
   }
 ]

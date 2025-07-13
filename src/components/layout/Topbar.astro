@@ -1,6 +1,7 @@
 ---
 import GlassContainer from "@components/common/GlassContainer.astro";
 import Button from "@components/common/Button.astro";
+import ResumeDownloadButton from "@components/resume/ResumeDownloadButton";
 import IconButton from "@components/common/IconButton.astro";
 import contactJson from "@data/contact.json";
 import socialJson from "@data/social.json";
@@ -49,9 +50,7 @@ const currentLocation = Astro.url.pathname;
 
   <!-- Botón Resume -->
   <div class="fixed top-4 right-4 z-50 hidden md:block">
-    <Button rightIcon="DownloadSimple">
-      <p class="text-sm">Resume</p>
-    </Button>
+    <ResumeDownloadButton client:load />
   </div>
 
   <!-- Botón Menú móvil -->

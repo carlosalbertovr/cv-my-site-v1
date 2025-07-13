@@ -1,9 +1,11 @@
 [
   {
+    "id": "github",
     "icon": "GithubLogo",
     "url": "https://github.com/carlosalbertovr"
   },
   {
+    "id": "linkedin",
     "icon": "LinkedinLogo",
     "url": "https://www.linkedin.com/in/cavr95/"
   }

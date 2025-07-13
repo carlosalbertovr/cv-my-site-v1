@@ -45,7 +45,8 @@ const records = type === "experience" ? experienceJson : educationJson;
             </div>
             <div class="flex h-full items-end justify-end min-w-[6rem]">
               <p class="text-xs sm:text-sm self-end text-gray-400">
-                {record.startDate}-{record.endDate}
+                {new Date(record.startDate).getFullYear()}-
+                {record.endDate === "Present" ? "Present" : new Date(record.endDate).getFullYear()}
               </p>
             </div>
           </div>
