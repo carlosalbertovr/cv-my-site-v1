@@ -12,7 +12,7 @@ import projectsJson from "@data/projects.json";
 
 <Layout>
     {/* Section 1: Intro */}
-    <section id="intro" class="w-full h-screen">
+    <section id="intro" class="w-full h-full mt-[15vh] md:mt-0 md:h-screen">
       <div class="flex items-center h-full text-white">
         <div
           class="flex flex-col sm:w-full lg:w-[60%] gap-8 sm:gap-8 items-center sm:items-start"
@@ -67,7 +67,7 @@ import projectsJson from "@data/projects.json";
               animateBy="words"
               direction="top"
               onAnimationComplete={() => console.log("foo")}
-              className="text-base text-gray-400 text-center sm:text-left"
+              className="text-base text-gray-400 text-left"
             />
           </Reveal>
 
@@ -117,7 +117,7 @@ import projectsJson from "@data/projects.json";
                 animateBy="words"
                 direction="top"
                 onAnimationComplete={() => console.log("foo")}
-                className="text-base text-gray-400 text-center sm:text-left"
+                className="text-base text-gray-400 text-left"
               />
             </Reveal>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
