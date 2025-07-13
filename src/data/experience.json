@@ -2,28 +2,28 @@
   {
     "title": "Full-Stack Software Developer",
     "location": "Arup",
-    "image": "src/assets/companies/arup_logo.jpeg",
+    "image": "companies/arup_logo.jpeg",
     "startDate": "2023",
     "endDate": "Present"
   },
   {
     "title": "BIM Technician",
     "location": "Arup",
-    "image": "src/assets/companies/arup_logo.jpeg",
+    "image": "companies/arup_logo.jpeg",
     "startDate": "2021",
     "endDate": "2023"
   },
   {
     "title": "BIM Technician",
     "location": "Valladares Ingeniería",
-    "image": "src/assets/companies/valladares_ingenieria_logo.jpeg",
+    "image": "companies/valladares_ingenieria_logo.jpeg",
     "startDate": "2020",
     "endDate": "2021"
   },
   {
     "title": "BIM Technician",
     "location": "Arup",
-    "image": "src/assets/companies/arup_logo.jpeg",
+    "image": "companies/arup_logo.jpeg",
     "startDate": "2019",
     "endDate": "2020"
   }

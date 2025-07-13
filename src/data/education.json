@@ -2,14 +2,14 @@
   {
     "title": "Full-Stack Software Development",
     "location": "4Geeks",
-    "image": "src/assets/companies/4geeksacademy_logo.jpeg",
+    "image": "companies/4geeksacademy_logo.jpeg",
     "startDate": "2022",
     "endDate": "2023"
   },
   {
     "title": "Civil Engineering",
     "location": "Universidad de Oriente",
-    "image": "src/assets/companies/udo_logo.jpeg",
+    "image": "companies/udo_logo.jpeg",
     "startDate": "2012",
     "endDate": "2018"
   }

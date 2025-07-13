@@ -2,116 +2,116 @@
   {
     "id": "aws",
     "title": "AWS",
-    "image": "src/assets/technologies/aws.png"
+    "image": "technologies/aws.png"
   },
   {
     "id": "chakra",
     "title": "Chakra UI",
-    "image": "src/assets/technologies/chakra.png"
+    "image": "technologies/chakra.png"
   },
   {
     "id": "astro",
     "title": "Astro",
-    "image": "src/assets/technologies/astro.webp"
+    "image": "technologies/astro.webp"
   },
   {
     "id": "express",
     "title": "Express",
-    "image": "src/assets/technologies/express.png"
+    "image": "technologies/express.png"
   },
   {
     "id": "figma",
     "title": "Figma",
-    "image": "src/assets/technologies/figma.png"
+    "image": "technologies/figma.png"
   },
   {
     "id": "framer",
     "title": "Framer",
-    "image": "src/assets/technologies/framer.png"
+    "image": "technologies/framer.png"
   },
   {
     "id": "git",
     "title": "Git",
-    "image": "src/assets/technologies/git.png"
+    "image": "technologies/git.png"
   },
   {
     "id": "illustrator",
     "title": "Illustrator",
-    "image": "src/assets/technologies/illustrator.png"
+    "image": "technologies/illustrator.png"
   },
   {
     "id": "javascript",
     "title": "JavaScript",
-    "image": "src/assets/technologies/javascript.png"
+    "image": "technologies/javascript.png"
   },
   {
     "id": "knex",
     "title": "Knex.js",
-    "image": "src/assets/technologies/knex.png"
+    "image": "technologies/knex.png"
   },
   {
     "id": "mysql",
     "title": "MySQL",
-    "image": "src/assets/technologies/mysql.png"
+    "image": "technologies/mysql.png"
   },
   {
     "id": "nextjs",
     "title": "Next.js",
-    "image": "src/assets/technologies/next.png"
+    "image": "technologies/next.png"
   },
   {
     "id": "node",
     "title": "Node.js",
-    "image": "src/assets/technologies/node.png"
+    "image": "technologies/node.png"
   },
   {
     "id": "photoshop",
     "title": "Photoshop",
-    "image": "src/assets/technologies/photoshop.png"
+    "image": "technologies/photoshop.png"
   },
   {
     "id": "postgresql",
     "title": "PostgreSQL",
-    "image": "src/assets/technologies/postgre.png"
+    "image": "technologies/postgre.png"
   },
   {
     "id": "premier",
     "title": "Premiere Pro",
-    "image": "src/assets/technologies/premier.png"
+    "image": "technologies/premier.png"
   },
   {
     "id": "prisma",
     "title": "Prisma",
-    "image": "src/assets/technologies/prisma.png"
+    "image": "technologies/prisma.png"
   },
   {
     "id": "react",
     "title": "React",
-    "image": "src/assets/technologies/react.png"
+    "image": "technologies/react.png"
   },
   {
     "id": "redux",
     "title": "Redux",
-    "image": "src/assets/technologies/redux.png"
+    "image": "technologies/redux.png"
   },
   {
     "id": "tailwind",
     "title": "Tailwind CSS",
-    "image": "src/assets/technologies/tailwind.png"
+    "image": "technologies/tailwind.png"
   },
   {
     "id": "tanstack",
     "title": "TanStack Query",
-    "image": "src/assets/technologies/tanstack.png"
+    "image": "technologies/tanstack.png"
   },
   {
     "id": "typescript",
     "title": "TypeScript",
-    "image": "src/assets/technologies/typescript.png"
+    "image": "technologies/typescript.png"
   },
   {
     "id": "zustand",
     "title": "Zustand",
-    "image": "src/assets/technologies/zustand.png"
+    "image": "technologies/zustand.png"
   }
 ]
