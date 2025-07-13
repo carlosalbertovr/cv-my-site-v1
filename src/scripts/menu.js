@@ -4,9 +4,9 @@ function setupMobileMenu() {
 
   if (!btn || !menu) return;
 
-  btn.addEventListener("click", () => {
+  function toggleMenu(e) {
+    if (e) e.preventDefault();
     const isOpen = menu.classList.contains("translate-y-0");
-
     if (isOpen) {
       menu.classList.remove("translate-y-0");
       menu.classList.add("-translate-y-full");
@@ -16,7 +16,10 @@ function setupMobileMenu() {
       menu.classList.add("translate-y-0");
       document.body.classList.add("overflow-hidden");
     }
-  });
+  }
+
+  btn.addEventListener("click", toggleMenu);
+  btn.addEventListener("touchend", toggleMenu);
 
   window.closeMobileMenu = () => {
     menu.classList.add("-translate-y-full");
